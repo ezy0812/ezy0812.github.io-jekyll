@@ -3,7 +3,6 @@ layout: page
 type: about
 ---
 
-# Me
 
 ## 基本资料
 
