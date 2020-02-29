@@ -1,6 +1,7 @@
 ---
 layout: page
 type: about
+title: Me
 ---
 
 
