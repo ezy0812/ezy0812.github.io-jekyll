@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,yBAAyB,CAAC,uBAAuB,CAAC;EAAE,OAAO,EAAE,YAAY;CAAI",
+    "sources": [
+        "sidebar-blogroll.scss"
+    ],
+    "names": [],
+    "file": "sidebar-blogroll.css"
+}

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,WAAW,CAAC;EAAE,UAAU,EAAE,IAAI;CAAI",
+    "sources": [
+        "outline.scss"
+    ],
+    "names": [],
+    "file": "outline.css"
+}

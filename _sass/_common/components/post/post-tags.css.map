@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,aAAa,CAAC,UAAU,CAAC;EACvB,UAAU,EAAE,IAAI;EAChB,UAAU,EAAE,MAAM;CAOnB;;AATD,AAIE,aAJW,CAAC,UAAU,CAItB,CAAC,CAAC;EACA,OAAO,EAAE,YAAY;EACrB,YAAY,EAAE,IAAI;EAClB,SAAS,EAAE,IAAI;CAChB",
+    "sources": [
+        "post-tags.scss"
+    ],
+    "names": [],
+    "file": "post-tags.css"
+}

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AACE,kBADgB,CAChB,GAAG,CAAC;EACF,OAAO,EAAE,YAAY;CACtB;;AAHH,AAKE,kBALgB,CAKhB,UAAU,CAAC;EACT,SAAS,EAAE,cAAc;CAC1B;;AAGH,AAAA,qBAAqB,CAAC,WAAW,CAAC;EAC9B,KAAK,EAAE,eAAe;EACtB,SAAS,EAAE,kBAAkB;EAC7B,MAAM,EAAE,YAAY;CACrB",
+    "sources": [
+        "gentie.scss"
+    ],
+    "names": [],
+    "file": "gentie.css"
+}

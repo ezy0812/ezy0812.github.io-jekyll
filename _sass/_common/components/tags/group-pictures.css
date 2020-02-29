@@ -1,0 +1,47 @@
+.post .post-body .group-picture img {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0 3px;
+  border: none;
+}
+
+.post .group-picture-row {
+  overflow: hidden;
+  margin-top: 6px;
+}
+
+.post .group-picture-row:first-child {
+  margin-top: 0;
+}
+
+.post .group-picture-column {
+  float: left;
+}
+
+.page-post-detail .post-body .group-picture-column {
+  float: none;
+  margin-top: 10px;
+  width: auto !important;
+}
+
+.page-post-detail .post-body .group-picture-column img {
+  margin: 0 auto;
+}
+
+.page-archive .group-picture-container {
+  overflow: hidden;
+}
+
+.page-archive .group-picture-row {
+  float: left;
+}
+
+.page-archive .group-picture-row:first-child {
+  margin-top: 6px;
+}
+
+.page-archive .group-picture-column {
+  max-width: 150px;
+  max-height: 150px;
+}
+/*# sourceMappingURL=group-pictures.css.map */

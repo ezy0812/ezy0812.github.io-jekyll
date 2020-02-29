@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,YAAY,CAAC;EACX,UAAU,EAAE,IAAI;EAChB,UAAU,EAAE,MAAM;CACnB;;AAED,AAAA,cAAc,CAAC;EACb,OAAO,EAAE,YAAY;CAGtB;;AAJD,AAGE,cAHY,CAGZ,CAAC,CAAC;EAAE,MAAM,EAAE,IAAI;CAAI",
+    "sources": [
+        "jiathis.scss"
+    ],
+    "names": [],
+    "file": "jiathis.css"
+}

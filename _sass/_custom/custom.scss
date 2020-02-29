@@ -139,4 +139,12 @@ code {
     margin: 2px;
 }
 
-
+// 主页文章添加阴影效果
+.post {
+  margin-top: 10px;
+  margin-bottom: 40px;
+  padding: 25px;
+  -webkit-box-shadow: 0 0 20px rgba(202, 203, 203, .8);
+  -moz-box-shadow: 0 0 20px rgba(202, 203, 204, .8);
+  background: #fff
+}
