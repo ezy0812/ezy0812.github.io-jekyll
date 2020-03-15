@@ -26,6 +26,9 @@ sidebar:
   toc: Table of Contents
 
 post:
+  copy_button: Copy
+  copy_success: Copied
+  copy_failure: Copy failed
   created: Post created
   modified: Post modified
   sticky: Sticky

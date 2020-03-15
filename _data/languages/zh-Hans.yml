@@ -26,6 +26,9 @@ sidebar:
   toc: 文章目录
 
 post:
+  copy_button: 复制
+  copy_success: 复制成功
+  copy_failure: 复制失败
   created: 创建于
   modified: 更新于
   sticky: 置顶
