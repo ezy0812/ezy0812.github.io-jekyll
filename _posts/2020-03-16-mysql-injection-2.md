@@ -129,4 +129,40 @@ http://192.168.0.104/sqli/Less-26/?id=1'%20||'1
 ## 宽字节注入
 ### 产生原理
 > GBK每个字符2个字节，ASCII每个字符1个字节
-> PHP中编码为GBK，函数执行为ASCII，mysql默认字符集是GBK等宽字节字符集
+> PHP中编码为GBK，函数执行为ASCII，mysql默认字符集是GBK等宽字节字符集  
+> %DF'会被PHP中的$\color{red}{addslashes}$函数转义为“%DF\\'”,"\\"是URL里的“%5C”,那么“%DF'”会被转义成“%DF%5C%27”(%27是引号)，倘若网站字符集是GBK，Mysql使用的编码也是GBK的话，就会认为“%DF%5C%27”是一个宽字符
+
+### 以less-33为例
+![f21]({{site.baseurl}}/assets/images/images_of_sql_injection/mysql_injection2_f21.png)
+
+### 构造Payload
+
+```http
+http://192.168.0.100/sqli/less-33/?id=-1%df' union select 1,version(),database() --+
+```
+
+![f22]({{site.baseurl}}/assets/images/images_of_sql_injection/mysql_injection2_f22.png)
+
+> 最常用的是使用%df，其实只要第一个ASCII码大于128即可，如ASCII码为129的就可以，先将129转化为16进制，0x81，然后在前面加%即可，即为%81  
+> GBK首字节对应0x81-0xfe，尾字节对应0x40-0xfe(除0x7f)
+
+### 如less-32
+![f23]({{site.baseurl}}/assets/images/images_of_sql_injection/mysql_injection2_f23.png)   
+
+```http
+http://192.168.0.100/sqli/less-32/?id=-1%81' union select 1,version(),database() --+
+```
+
+![f24]({{site.baseurl}}/assets/images/images_of_sql_injection/mysql_injection2_f24.png)   
+
+
+***
+## 二次注入
+### 以less-24为例，没有对username变量进行过滤
+![f29]({{site.baseurl}}/assets/images/images_of_sql_injection/mysql_injection2_f29.png)
+
+### 攻击过程
+![f25]({{site.baseurl}}/assets/images/images_of_sql_injection/mysql_injection2_f25.png)  
+![f26]({{site.baseurl}}/assets/images/images_of_sql_injection/mysql_injection2_f26.png)  
+![f27]({{site.baseurl}}/assets/images/images_of_sql_injection/mysql_injection2_f27.png)   
+![f28]({{site.baseurl}}/assets/images/images_of_sql_injection/mysql_injection2_f28.png) 
